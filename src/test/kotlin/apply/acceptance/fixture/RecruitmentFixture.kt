@@ -28,8 +28,8 @@ class RecruitmentBuilder {
     var termId: Long = 0L
     var startDateTime: LocalDateTime = LocalDateTime.now().minusYears(1)
     var endDateTime: LocalDateTime = LocalDateTime.now().plusYears(1)
-    var recruitable: Boolean = false
-    var hidden: Boolean = true
+    var recruitable: Boolean = true
+    var hidden: Boolean = false
     var recruitmentItems: List<RecruitmentItemRequest> = emptyList()
 
     fun build(): RecruitmentResponse {

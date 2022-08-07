@@ -43,7 +43,7 @@ class EvaluationBuilder {
         val beforeEvaluation = when (beforeEvaluationId) {
             0L -> EvaluationSelectRequest()
             else -> {
-                val evaluation = getEvaluationById(beforeEvaluationId, recruitmentId)
+                val evaluation = getEvaluationById(beforeEvaluationId)
                 EvaluationSelectRequest(evaluation.title, evaluation.id)
             }
         }
@@ -70,9 +70,9 @@ class EvaluationBuilder {
     }
 }
 
-fun getEvaluationById(evaluationId: Long, recruitmentId: Long): EvaluationResponse {
+fun getEvaluationById(evaluationId: Long): EvaluationResponse {
     return RestAssured.given()
-        .get("/api/recruitments/$recruitmentId/evaluations/$evaluationId")
+        .get("/api/recruitments/0/evaluations/$evaluationId")
         .then()
         .extract()
         .`as`(object : TypeRef<ApiResponse<EvaluationResponse>>() {})
