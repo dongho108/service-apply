@@ -18,6 +18,11 @@ data class RecruitmentRequest(
     var recruitmentItems: List<RecruitmentItemRequest>,
 )
 
+data class RecruitmentSelectRequest(
+    val title: String,
+    val id: Long
+)
+
 class RecruitmentBuilder {
     var title: String = "웹 백엔드 3기"
     var termId: Long = 0L
@@ -55,6 +60,15 @@ class RecruitmentBuilder {
             .`as`(object : TypeRef<ApiResponse<RecruitmentResponse>>() {})
             .body as RecruitmentResponse
     }
+}
+
+fun getRecruitmentById(recruitmentId: Long): RecruitmentResponse {
+    return RestAssured.given()
+        .get("/api/recruitments/$recruitmentId")
+        .then()
+        .extract()
+        .`as`(object : TypeRef<ApiResponse<RecruitmentResponse>>() {})
+        .body as RecruitmentResponse
 }
 
 fun recruitment(builder: RecruitmentBuilder.() -> Unit): RecruitmentResponse {
