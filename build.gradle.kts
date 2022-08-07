@@ -58,6 +58,7 @@ dependencies {
     asciidoctorExt("org.springframework.restdocs:spring-restdocs-asciidoctor")
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
     testImplementation("io.kotest:kotest-runner-junit5:5.3.2")
+    testImplementation("io.rest-assured:rest-assured:3.3.0")
 }
 
 dependencyManagement {
