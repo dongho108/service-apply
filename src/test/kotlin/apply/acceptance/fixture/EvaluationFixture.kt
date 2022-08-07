@@ -6,7 +6,7 @@ import io.restassured.RestAssured
 import io.restassured.http.ContentType
 import io.restassured.mapper.TypeRef
 
-data class EvaluationRequest(
+private data class EvaluationRequest(
     var title: String,
     var description: String,
     var recruitment: RecruitmentSelectRequest,

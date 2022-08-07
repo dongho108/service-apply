@@ -7,7 +7,7 @@ import io.restassured.http.ContentType
 import io.restassured.mapper.TypeRef
 import java.time.LocalDateTime
 
-data class MissionRequest(
+private data class MissionRequest(
     var title: String,
     var evaluation: EvaluationSelectRequest,
     var startDateTime: LocalDateTime,

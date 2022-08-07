@@ -1,6 +1,6 @@
 package apply.acceptance.fixture
 
-class RecruitmentItemRequest(
+data class RecruitmentItemRequest(
     val title: String,
     val position: Int,
     val maximumLength: Int,

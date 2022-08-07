@@ -1,6 +1,6 @@
 package apply.acceptance.fixture
 
-class EvaluationItemRequest(
+data class EvaluationItemRequest(
     var title: String,
     var maximumScore: Int,
     var position: Int,

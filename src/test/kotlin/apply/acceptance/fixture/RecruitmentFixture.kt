@@ -8,7 +8,7 @@ import io.restassured.http.ContentType
 import io.restassured.mapper.TypeRef
 import java.time.LocalDateTime
 
-data class RecruitmentRequest(
+private data class RecruitmentRequest(
     var title: String,
     var term: TermResponse,
     var startDateTime: LocalDateTime,
