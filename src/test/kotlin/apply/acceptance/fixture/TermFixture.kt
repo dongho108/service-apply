@@ -6,7 +6,7 @@ import io.restassured.RestAssured
 import io.restassured.http.ContentType
 import io.restassured.mapper.TypeRef
 
-class TermRequest(var name: String)
+data class TermRequest(var name: String)
 
 class TermBuilder {
     var name: String = "단독모집"
