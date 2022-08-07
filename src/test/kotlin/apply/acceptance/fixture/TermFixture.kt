@@ -20,11 +20,21 @@ class TermBuilder {
         return RestAssured.given().log().all()
             .contentType(ContentType.JSON)
             .body(termRequest)
-            .`when`().log().all()
+            .`when`()
             .post("/api/terms")
             .`as`(object : TypeRef<ApiResponse<TermResponse>>() {})
             .body as TermResponse
     }
+}
+
+fun getTermById(termId: Long): TermResponse {
+    val term = RestAssured.given()
+        .get("/api/terms/$termId")
+        .then()
+        .extract()
+        .`as`(object : TypeRef<ApiResponse<TermResponse>>() {})
+        .body as TermResponse
+    return TermResponse(term.id, term.name)
 }
 
 fun term(builder: TermBuilder.() -> Unit): TermResponse {
