@@ -25,21 +25,7 @@ class RecruitmentBuilder {
     var endDateTime: LocalDateTime = LocalDateTime.now().plusYears(1)
     var recruitable: Boolean = false
     var hidden: Boolean = true
-    var recruitmentItems: List<RecruitmentItemRequest> = recruitmentItems {
-        recruitmentItem()
-        recruitmentItem {
-            title = "프로그래밍 학습 과정과 현재 자신이 생각하는 역량은?"
-            position = 2
-            maximumLength = 1500
-            description = "우아한테크코스는..."
-        }
-        recruitmentItem {
-            title = "프로그래밍 학습 과정과 현재 자신이 생각하는 역량은?"
-            position = 3
-            maximumLength = 2000
-            description = "우아한테크코스는..."
-        }
-    }
+    var recruitmentItems: List<RecruitmentItemRequest> = emptyList()
 
     fun build(): RecruitmentResponse {
         val term = when (termId) {
