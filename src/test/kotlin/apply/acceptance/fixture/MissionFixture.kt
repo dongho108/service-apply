@@ -56,6 +56,15 @@ class MissionBuilder {
     }
 }
 
+fun getMissionById(missionId: Long): MissionResponse {
+    return RestAssured.given()
+        .get("/api/recruitments/0/missions/$missionId")
+        .then()
+        .extract()
+        .`as`(object : TypeRef<ApiResponse<MissionResponse>>() {})
+        .body as MissionResponse
+}
+
 fun mission(builder: MissionBuilder.() -> Unit): MissionResponse {
     return MissionBuilder().apply(builder).build()
 }
