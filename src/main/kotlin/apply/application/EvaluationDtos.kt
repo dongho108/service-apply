@@ -169,6 +169,14 @@ data class EvaluationTargetData(
     var evaluationStatus: EvaluationStatus = EvaluationStatus.WAITING
 )
 
+data class EvaluationJudgementData(
+    val requestKey: String,
+    val commitHash: String,
+    val statusCode: Int,
+    val passCount: Int,
+    val totalCount: Int
+)
+
 data class MailTargetResponse(
     val email: String,
     val name: String? = null
