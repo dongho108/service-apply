@@ -7,7 +7,7 @@ import javax.persistence.EnumType
 import javax.persistence.Enumerated
 
 @Entity
-class JudgeItem(
+class JudgmentItem(
     @Column
     val missionId: Long,
 
